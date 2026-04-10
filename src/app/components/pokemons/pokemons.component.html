@@ -1,1 +1,17 @@
-<p>pokemons works!</p>
+<h4>Les {{ countPokemons() }} premiers Pokémons :</h4>
+<h5>Dans l'ordre du pokédex :</h5>
+
+<div>
+  @for (pokemon of addPokemons(); track $index) {
+    <div class="pokemon-card">
+      <div>{{ pokemon.name }}</div>
+      <div>Catégorie : {{ pokemon.category }}</div>
+      <div>Type : @for (type of pokemon.types; track $index; let last = $last) {
+        {{ type }} {{ last ? "" : ", " }}
+      }</div>
+      <div>Taille : {{ pokemon.height }}</div>
+      <div>Poids : {{ pokemon.weight }}</div>
+      <br>
+    </div>
+  }
+</div>

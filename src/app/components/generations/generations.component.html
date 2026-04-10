@@ -1,1 +1,7 @@
-<p>generations works!</p>
+<h1>Générations de Pokémon</h1>
+<h4>Les différentes générations :</h4>
+<ul>
+  @for (item of generations; track $index) {
+    <li>Génération {{ item }}</li>
+  }
+</ul>
